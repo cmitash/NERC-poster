@@ -1,0 +1,48 @@
+\documentclass[final]{beamer}
+\mode<presentation>
+  {
+  \usetheme{Rutgers}
+  }
+  \usepackage{amsmath,amsthm, amssymb, latexsym}
+  \boldmath
+  \usepackage[english]{babel}
+  \usepackage[latin1]{inputenc}
+  \usepackage{lmodern}
+  \usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+  
+\usepackage{myalgorithm}
+\usepackage{wrapfig}
+\usepackage[noend]{myalgorithmic}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{graphicx,wrapfig,lipsum}
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \title[Dataset]{A Dataset for Improved RGBD-based Object Detection and Pose Estimation for Warehouse Pick-and-Place}
+  \author[Rennie]{$^\star$Colin Rennie, $^\star$Rahul Shome, $^\dagger$Alberto Ferreira De Souza, $^\star$Kostas Bekris}
+  \institute[RutgersFUES]{$^\star$ Rutgers, the State University of New Jersey \; $^\dagger$ Federal University of Espirito Santo, Brazil}
+
+
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \newlength{\blocklen}
+  \begin{document}
+  \setlength{\blocklen}{0.49\textwidth}
+  \begin{frame}{} 
+    \vspace {-0.5in}
+    \input {00_Motivation}
+    \vfill
+    \input {01_Dataset}
+    \vfill
+    \input {02_Analysis}
+    \vfill
+  \end{frame}
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% End:

@@ -1,0 +1,178 @@
+\ProvidesPackage{beamerthemeRutgers} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\RequirePackage{beamercolors}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor {unrblue1}{rgb}{0.31,0.51,0.7}
+\definecolor {unrblue2}{rgb}{0.0,0.20,0.40}
+\definecolor {unrblue3}{rgb}{0,0.14,0.27}
+
+\definecolor {unryellow1}{rgb}{0.81,0.70,0.36}
+\definecolor {unryellow2}{rgb}{0.62,0.47,0.0}
+\definecolor {unryellow3}{rgb}{0.41,0.32,0.0}
+
+\definecolor {unrorange1}{rgb}{0.81,0.51,0.36}
+\definecolor {unrorange2}{rgb}{0.62,0.20,0.0}
+\definecolor {unrorange3}{rgb}{0.41,0.13,0.0}
+
+\definecolor {rutred}{rgb}{0.86,0.0,0.18}
+\definecolor {rutyellow1}{rgb}{0.80,0.68,0.0}
+\definecolor {rutyellow2}{rgb}{1.0,0.76,0.15}
+\definecolor {rutyellow3}{rgb}{0.87,0.76,0.05}
+
+\definecolor {lightWhite}{rgb}{0.93,0.93,0.93}
+
+\definecolor {titleWhite}{rgb}{0.96,0.96,0.96}
+\definecolor {authorWhite}{rgb}{0.85,0.85,0.85}
+\definecolor {instituteWhite}{rgb}{0.85,0.85,0.85}
+
+\setbeamercolor{headline}{fg=rutyellow2,bg=rutred}
+\setbeamercolor{footline}{fg=rutyellow1, bg=unrblue3}
+\setbeamerfont{footline}{size=\large}
+\setbeamercolor{separation line}{bg=unrorange1}
+%\setbeamercolor{title in headline}{fg=rutyellow2}
+%\setbeamercolor{author in headline}{fg=gold3}
+%\setbeamercolor{institute in headline}{fg=rutyellow3}
+\setbeamercolor{title in headline}{fg=titleWhite}
+\setbeamercolor{author in headline}{fg=authorWhite}
+\setbeamercolor{institute in headline}{fg=authorWhite}
+
+\setbeamercolor{framesubtitle}{fg=unryellow1,bg=DarkSlateGray}
+\setbeamercolor{author in head/foot}{fg=unryellow1, bg=black}
+\setbeamercolor{title in head/foot}{fg=unrorange2, bg=black}
+
+\setbeamercolor{normal text}{fg=black, bg=white}
+\setbeamercolor{block body}{bg=lightWhite,fg=black}
+\setbeamercolor{block title}{fg=rutyellow2,bg=rutred}
+\setbeamerfont{block title}{size=\large,series=\bf}
+\setbeamercolor{structure}{fg=unrorange2}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[rounded=true,shadow=true,leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[rounded=true,shadow=true,colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{  
+  \leavevmode
+  
+  \begin {beamercolorbox}[wd = \paperwidth, center]{headline}
+  \begin {columns}[T]
+  
+%  %one Image
+%   \begin {column}{\paperwidth}
+%    {\centering
+%      \includegraphics[]{Title}
+%    }
+%  \end {column}
+  
+  % Left Margin
+%  \begin {column}{0.01\paperwidth}
+%  \end {column}
+  
+  %Banner
+  \begin {column}{0.0001\paperwidth}
+  {\centering
+%      \vspace{1in}
+%      \includegraphics[width = 0.22\paperwidth]{RU_SIG_SAS_REVWHITE}
+      \includegraphics[width = 1.1\paperwidth, height = 3.6in]{banner}
+    }
+  \end {column}
+  
+%    % Left Margin
+%   \begin {column}{0.01\paperwidth}
+%   \end {column}
+  
+    %Logo
+%    \begin {column}{0.23\paperwidth}
+%    {\centering
+%        \vspace{1in}
+%        \includegraphics[width = 0.22\paperwidth]{RU_SIG_SAS_REVWHITE}
+%      }
+%    \end {column}
+    
+  % Logo spacing
+  \begin {column} {0.04\paperwidth}
+  \end{column}
+  
+  % Title, author, affiliation
+  \begin {column} {\paperwidth}
+    \raggedright
+    \vskip5ex
+    \usebeamercolor{title in headline}{\color{fg}\textbf{\huge{\inserttitle}}\\[2ex]}
+    \usebeamercolor{author in headline}{\color{fg}\textbf{\LARGE{\insertauthor}}\\[1ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\LARGE{\insertinstitute}\\[1ex]}     
+  \end{column}
+  
+  % Funding agency(ies)
+%  \begin {column} {0.16\paperwidth}
+%    \vskip2ex
+%   {\centering
+%      \usebeamercolor{author in headline}{\color{fg}\large{Supported by}\\}
+%      \includegraphics[width=.05\paperwidth]{nsf} \\
+%      \usebeamercolor{author in headline}{\color{fg}\normalsize{ IIS 1451737 and \\ \vspace{0.2in} CCF 1330789}\\[3ex]}
+%    }
+%  \end {column}
+  
+    % Right Margin
+%  \begin {column}{0.01\paperwidth}
+%  \end {column}
+  
+  \end{columns}
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{author in head/foot}%
+    \textnormal{http://www.pracsyslab.org/rutgers\_apc\_rgbd\_dataset}
+    \hfill
+    \textnormal{\{colin.rennie, rahul.shome, kostas.bekris\}@cs.rutgers.edu, alberto@lcad.inf.ufes.br}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{2pt}
+  \end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<all>
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End: 
