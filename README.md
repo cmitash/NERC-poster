@@ -1,2 +1,2 @@
-# iccv3d-poster
+# NERC-poster
 and farts
