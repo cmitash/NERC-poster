@@ -1,54 +1,51 @@
 \begin{columns}[t]
-	\begin{column}{0.32\textwidth}
+	\begin{column}{0.70\textwidth}
+		\begin{block}{\large Pose Estimation using Monte Carlo Tree Search}
+			\centering
+			\begin{figure}[h]
+				\includegraphics[width=0.9\textwidth]{clustering}
+				\caption{object candidate pose generation and clustering to reduce set cardiniality}
+			\end{figure}
+			\vspace{-0.3in}
+			\begin{itemize}
+				\item Pose candidate set is constructed for each object using the extracted object segment and the 3D CAD model.
+				\item For computational efficiency, the set of object hypotheses is clustered to obtain smaller candidate sets while still containing poses close to the true solutions. 
+			\end{itemize}
+			\vspace{-0.3in}
+			\begin{columns}[t]
+			\begin{column} {0.40\textwidth}
+			\begin{figure}[h]
+				\includegraphics[width=0.8\textwidth]{mcts}
+				\caption{Monte Carlo Tree Search for pose estimation}
+			\end{figure}
+			\end{column}
+			\begin{column} {0.60\textwidth}
+			\begin{itemize}
+				\item An order of object placement is computed based on a set of rules defined over the object segments.
+				\item Node expansion in the tree corresponds to an object placement, which is constrained (imposed by using physics simulator and point cloud trimming) by the previously placed objects.
+				\item The leaf nodes (complete assignment) are rendered and a score is computed by comparing rendered scene to the observed depth image.
+				\item The search uses Upper Confidence Bound to trade-off exploration and exploitation within the search.
+			\end{itemize}
+			\end{column}
+			\end{columns}
+		\end{block}
+	\end{column}
+	\begin{column}{0.30\textwidth}
 		\begin{block}{\large Pose Estimation Evaluation}
 			\centering
 			\begin{itemize}
-				\item Dataset is readily used to compare pose estimation algorithms for this difficult task 
-				\item Acceptable accuracy thresholds are at the discretion of the user
-				\item May use the metrics provided by the dataset to determine a series of improvements in order to deal with difficulties of the task
+				\item Results demonstrate that search is useful in case of a clutter.
+				\item MCTS converges much faster compared to using a heuristic based on registration score.
 			\end{itemize}
-				\begin{figure}[h]
-					\includegraphics[width = 0.9\textwidth]{results}
-					\caption{Evaluation made possible several improvements to an example pose estimation algorithm }
-				\end{figure}
-				\begin{figure}[h]
-					\includegraphics[width = 0.7\textwidth]{munchkin_det}
-					\caption {An example detection of the ``duck'' from our dataset}
-				\end{figure}
-		\end{block}
-	\end{column}
-	\begin{column}{0.68\textwidth}
-		\begin{block}{\large Dataset Comparison}
-			\centering
 			\vspace{-0.2in}
-				\begin{figure}[h]
-					\includegraphics[width = 0.3\textwidth]{linemod_can_results}
-					\includegraphics[width = 0.3\textwidth]{linemod_duck_results}
-					\includegraphics[width = 0.3\textwidth]{linemod_iron_results}
-					\vspace{-0.2in}
-					\caption{Example objects from LINEMOD dataset evaluated using our example algorithm}
-				\end{figure}
-			\vspace{-0.2in}
-			\begin{itemize}
-				\item LINEMOD dataset of 10,000+ RGBD images with ground truth 6D pose
-				\item Shows target items on an AR board, in a heavily cluttered environment
-				\item Samples generated from a variety of viewpoints around and above the object
-				\item Can evaluate rotational, translational accuracy using the provided object models 
-			\end{itemize}
-				\begin{figure}[h]
-					\includegraphics[width = 0.3\textwidth]{scatter_champion}
-					\includegraphics[width = 0.3\textwidth]{scatter_munchkin}
-					\includegraphics[width = 0.3\textwidth]{scatter_expo}
-					\vspace{-0.2in}
-					\caption{Objects from our dataset evaluated using the same algorithm; Colors indicate clutter conditions}
-				\end{figure}
-			\vspace{-0.2in}
-			\begin{itemize}
-				\item Our similar setup: object models provided, 10,000+ RGBD images
-				\item Able to extract effects of immediate clutter on accuracy
-				\item Can also determine robustness to noise in the sensor samples
-				\item Evaluation with our dataset allows researchers to identify certain weak points in pose estimation algorithms on this difficult task
-			\end{itemize}
+			\begin{figure}[h]
+				\includegraphics[width=0.75\textwidth]{graph1}
+				\caption{Rotation error (degrees) vs the number of search expansions}
+			\end{figure}
+			\begin{figure}[h]
+				\includegraphics[width=0.75\textwidth]{graph2}
+				\caption{Translational error (cms) vs the number of search expansions}
+			\end{figure}
 		\end{block}
 	\end{column}
 \end{columns}
